@@ -28,7 +28,7 @@ public struct TCARouter<
   }
 
   public var body: some View {
-    WithViewStore(store) { viewStore in
+    WithViewStore(store, removeDuplicates: { _, _ in true }) { viewStore in
       Router(
         viewStore.binding(
           get: routes,
